@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI C</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div>
+        <h2>BMI Calculator</h2>
+        <h3>Age</h3>
+        <input type="text" id="Age">
+        <p>ages : 2-120</p>
+        <h3>Gender</h3>
+        <input type="radio" id="Gender" name="gender" value="male">Male
+        <input type="radio" id="Gender" name="gender" value="female">Female
+        <p class="text " >Height</p>
+        <input type="text" id="height">
+        <p class="text " >weight</p>
+        <input type="text" id="weight">
+        <p id="result"></p>
+        <button id="btn" onClick="bmi()" >Calculate</button>
+        <button id="btn1" onClick="clear()" >clear</button>
+        <p id ="info"> enter height[cm] & weight[kg]</p>
+    </div>
+    <script>
+        function bmi(){
+            var h = document.getElementById('height').value;
+            var w = document.getElementById('weight').value;
+            var bmi = w/(h/100*h/100);
+            var total = bmi.toFixed(2);
+            document.getElementById('result').innerHTML = "Your BMI is" + "  " + total+"kg/m^2";
+           
+        }
+        function clear(){
+            document.getElementById('result').innerHTML = "";
+        }
+    </script>
+</body>
+</html>
